@@ -41,5 +41,12 @@ describe LaunchDarkly::StreamProcessor do
       processor.send(:process_message, SSE::StreamEvent.new(type: :get, data: "", id: nil))
     end
   end
+
+  describe '#initialized?' do
+    it "initializes with a default config value" do
+      processor = subject.new("sdk_key")
+      expect(subject.initialized?).to eq(true)
+    end
+  end
 end
 

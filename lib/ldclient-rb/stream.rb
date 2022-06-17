@@ -22,7 +22,7 @@ module LaunchDarkly
 
   # @private
   class StreamProcessor
-    def initialize(sdk_key, config, diagnostic_accumulator = nil)
+    def initialize(sdk_key, config = LaunchDarkly::Config.new, diagnostic_accumulator = nil)
       @sdk_key = sdk_key
       @config = config
       @feature_store = config.feature_store
